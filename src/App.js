@@ -4,6 +4,7 @@ import NewExpence from './components/NewExpense/NewExpence';
 import React, {useState} from 'react';
 import  Expenses from './components/Expenses';
 
+
 //function App() {
   const dummy_expense = [
     {
@@ -39,13 +40,6 @@ import  Expenses from './components/Expenses';
         return [expense, ...prevExpenses];
       });
     };
-  
-    // return React.createElement(
-    //   'div',
-    //   {},
-    //   React.createElement('h2', {}, "Let's get started!"),
-    //   React.createElement(Expenses, { items: expenses })
-    // );
 
   return (
     <div>

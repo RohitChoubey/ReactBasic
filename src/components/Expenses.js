@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ExpenseItem from './ExpenseItem';
+import ExpenseChart from './Expenses/ExpenseChart';
 import ExpensesFilter from './NewExpense/ExpensesFilter';
 //import './expensesItem.css';
 
@@ -15,31 +16,23 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-
-  
   let expensesContent = <h3  style={{color: "#fff"}}>No expenses found.</h3>;
   
   if (filteredExpenses.length > 0) {
-    
     expensesContent = filteredExpenses.map((expense) => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        price={expense.price}
-        date={expense.date}
-      />
+      <ExpenseItem key={expense.id} title={expense.title}  price={expense.price} date={expense.date} />
     ));
   }
 
   return (
-    <div>
-      <div className='expenses'>
-        <ExpensesFilter
-          selected={filteredYear}
-          onChangeFilter={filterChangeHandler}
-        />
+    <div className='expenses'>
+      {/* <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}  />
+      {expensesContent}
+      <ExpenseChart expense={filteredExpenses} /> */}
+
+      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+        <ExpenseChart expense={filteredExpenses} />
         {expensesContent}
-      </div>
     </div>
   );
 };

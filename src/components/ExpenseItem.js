@@ -21,8 +21,6 @@ export default function ExpenseItem(propData) {
     //     console.log('You clicked Update Data.');
     //   }
 
-    console.warn(propData);
-
   return (
     <div className="expense-item">
         <div className='expense-date'>
